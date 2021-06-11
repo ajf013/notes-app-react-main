@@ -2,7 +2,7 @@
 
 In this project, I have done a Simple React App for adding our notes with dark / light mode toggle button.
 
-### [Live Site](https://notesreact.netlify.app/)
+### [Live Site](https://notesapp-react.netlify.app/)
 
 ![Screenshot](https://i.ibb.co/Hh7n1JH/notes-app-react.png)
 
