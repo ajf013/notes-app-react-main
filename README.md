@@ -4,6 +4,7 @@ In this project, I have done a Simple React App for adding our notes with dark /
 
 ### [Live Site](https://notesreact.netlify.app/)
 
+![Screenshot](https://i.ibb.co/Hh7n1JH/notes-app-react.png)
 
 ## You can reach out 😊😊
 Feel free to contact me about the problems. I will try to help as much as I can 😉
