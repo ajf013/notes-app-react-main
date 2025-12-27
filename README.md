@@ -21,7 +21,7 @@ A modern, feature-rich Notes Application built with React.js.
 ![Dark Mode](./screenshots/dark_theme.png)
 
 ### Share Options & Access Control
-![Share Options](./screenshots/share_option)
+![Share Options](./screenshots/share_option.png)
 
 ## 🛠️ Tech Stack
 
