@@ -15,7 +15,9 @@ code {
 .header {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	margin-bottom: 50px;
+	margin-top: 50px;
 }
 
 .dark-mode {
@@ -33,15 +35,15 @@ code {
 	padding-right: 15px;
 	padding-left: 15px;
 	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .notes-list {
-	display: grid;
-	grid-gap: 2rem;
-	grid-template-columns: repeat(
-		auto-fill,
-		minmax(250px, 1fr)
-	);
+	display: flex;
+	gap: 2rem;
+	overflow-x: auto;
+	padding-bottom: 1rem;
 }
 
 .note.new {
@@ -79,6 +81,25 @@ textarea:focus {
 	flex-direction: column;
 	justify-content: space-between;
 	white-space: pre-wrap;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+.note:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .note-footer {

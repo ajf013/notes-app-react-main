@@ -1,35 +1,73 @@
 import { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const AddNote = ({ handleAddNote }) => {
 	const [noteText, setNoteText] = useState('');
-	const characterLimit = 500;
+	const [noteTitle, setNoteTitle] = useState('');
 
-	const handleChange = (event) => {
-		if (characterLimit - event.target.value.length >= 0) {
-			setNoteText(event.target.value);
-		}
+	const handleChange = (value) => {
+		setNoteText(value);
+	};
+
+	const handleTitleChange = (event) => {
+		setNoteTitle(event.target.value);
 	};
 
 	const handleSaveClick = () => {
 		if (noteText.trim().length > 0) {
-			handleAddNote(noteText);
+			handleAddNote(noteTitle, noteText);
 			setNoteText('');
+			setNoteTitle('');
 		}
 	};
 
+	const modules = {
+		toolbar: [
+			[{ 'header': [1, 2, false] }],
+			['bold', 'italic', 'underline', 'strike', 'blockquote'],
+			[{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+			['link', 'image'],
+			['clean']
+		],
+	};
+
+	const formats = [
+		'header',
+		'bold', 'italic', 'underline', 'strike', 'blockquote',
+		'list', 'bullet', 'indent',
+		'link', 'image'
+	];
+
 	return (
 		<div className='note new'>
-			<textarea
-				rows='8'
-				cols='10'
-				placeholder='Type to add a note...'
+			<input
+				type='text'
+				placeholder='Title (optional)...'
+				value={noteTitle}
+				onChange={handleTitleChange}
+				style={{
+					backgroundColor: 'transparent',
+					border: 'none',
+					borderBottom: '1px solid rgba(0,0,0,0.1)',
+					width: '100%',
+					marginBottom: '10px',
+					padding: '5px',
+					fontSize: '1.1em',
+					fontWeight: 'bold',
+					outline: 'none'
+				}}
+			/>
+			<ReactQuill
+				theme="snow"
 				value={noteText}
 				onChange={handleChange}
-			></textarea>
+				modules={modules}
+				formats={formats}
+				placeholder='Type to add a note...'
+				style={{ height: '150px', marginBottom: '40px' }}
+			/>
 			<div className='note-footer'>
-				<small>
-					{characterLimit - noteText.length} Remaining
-				</small>
 				<button className='save' onClick={handleSaveClick}>
 					Save
 				</button>
