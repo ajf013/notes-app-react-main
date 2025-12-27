@@ -41,9 +41,19 @@ code {
 
 .notes-list {
 	display: flex;
+	flex-direction: column;
 	gap: 2rem;
-	overflow-x: auto;
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+	.notes-list {
+		gap: 1rem;
+	}
+
+	.note {
+		margin-bottom: 1rem;
+	}
 }
 
 .note.new {
