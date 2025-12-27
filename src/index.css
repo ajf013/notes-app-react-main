@@ -140,3 +140,16 @@ textarea:focus {
 .search input:focus {
 	outline: none;
 }
+
+/* Table Styling for Quill Editor content */
+.note table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 10px 0;
+}
+
+.note table td,
+.note table th {
+	border: 1px solid #ccc;
+	padding: 5px;
+}

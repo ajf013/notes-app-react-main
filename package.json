@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "aos": "^2.3.4",
     "dompurify": "^3.3.1",
+    "quill-better-table": "^1.2.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
